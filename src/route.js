@@ -1,10 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-
-import { Login } from './pages/Login/Login';
+import { SignUpEdit } from './pages/CadastroEndereco/SignUpEdit';
+import { Login } from './pages/LoginPage/LoginPage';
 import { SingUpPage } from './pages/SingUpPage/SingUpPage';
-import { CadastroEndereco } from './pages/CadastroEndereco/CadastroEndereco';
+
 
 function RoutesApp() {
     return (
@@ -14,7 +13,7 @@ function RoutesApp() {
 
                 <Route path="/" element={<Login />} />
                 <Route path="/signup" element={<SingUpPage />} />
-                <Route path="/cadastro-endereco" element={<CadastroEndereco />} />
+                <Route path="signup-edit" element={<SignUpEdit />} />
 
             </Routes>
         </BrowserRouter>

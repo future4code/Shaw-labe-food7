@@ -13,10 +13,8 @@ function LoginForm() {
       }
 
       const [values, setValues] = React.useState({
-        amount: '',
+        
         password: '',
-        weight: '',
-        weightRange: '',
         showPassword: false,
       });
     

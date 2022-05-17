@@ -5,5 +5,9 @@ export const goToSignUp = (navigate) => {
 }
 
 export const editCadastro = (navigate) => {
-    navigate('/cadastro-endereco')
+    navigate('/signup-edit')
+}
+
+export const goToLogin = (navigate) => {
+    navigate('/')
 }
