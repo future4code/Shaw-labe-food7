@@ -1,7 +1,8 @@
-import axios from "axios";
+import { useState } from "react";
+
 
 export const useForm = (initialState) => {
-  const [form, setForm] = React.useState(initialState)
+  const [form, setForm] = useState(initialState)
 
   const onChange = (event) => {
     const { name, value } = event.target
