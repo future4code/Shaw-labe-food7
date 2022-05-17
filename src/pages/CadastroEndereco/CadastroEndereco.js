@@ -5,3 +5,4 @@ export const CadastroEndereco = () => {
     <div>CadastroEndereco</div>
   )
 }
+
