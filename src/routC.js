@@ -4,7 +4,7 @@ export const goToSignUp = (navigate) => {
     navigate('/signup')
 }
 
-export const editCadastro = (navigate) => {
+export const goToEditSignUp = (navigate) => {
     navigate('/signup-edit')
 }
 

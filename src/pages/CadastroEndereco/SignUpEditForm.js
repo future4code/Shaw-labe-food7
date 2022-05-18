@@ -1,10 +1,6 @@
 import React from 'react';
-import { Box, InputAdornment, OutlinedInput, TextField } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
+import { Box, TextField } from '@mui/material';
+
 import { SignUpButton } from './styled';
 
 function SignUpEditForm() {

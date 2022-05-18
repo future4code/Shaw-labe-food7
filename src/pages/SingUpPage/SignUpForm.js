@@ -6,35 +6,40 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import { SignUpButton } from './styled';
+import { useForm } from '../../hooks/useForm';
+import { signUp } from '../../services/users';
+import { useNavigate } from 'react-router-dom';
 
 function SignUpForm() {
         
-             // const navigate = useNavigate();
-    const onSubmitForm = (e) => {
-        e.preventDefault();
-        // login(form, clear, navigate);
-      }
+  const navigate = useNavigate();
+  const {form, onChange, clean} = useForm({name: "" , email: "", cpf: "", passwod: ""})
+  console.log(form)
+  const onSubmitForm = (e) => {
+      e.preventDefault();
+      signUp(form, clean, navigate);
+    }
 
-      const [values, setValues] = React.useState({
+      // const [values, setValues] = React.useState({
         
-        password: '',
-        showPassword: false,
-      });
+      //   password: '',
+      //   showPassword: false,
+      // });
     
-      const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-      };
+      // const handleChange = (prop) => (event) => {
+      //   setValues({ ...values, [prop]: event.target.value });
+      // };
     
-      const handleClickShowPassword = () => {
-        setValues({
-          ...values,
-          showPassword: !values.showPassword,
-        });
-      };
+      // const handleClickShowPassword = () => {
+      //   setValues({
+      //     ...values,
+      //     showPassword: !values.showPassword,
+      //   });
+      // };
     
-      const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-      };
+      // const handleMouseDownPassword = (event) => {
+      //   event.preventDefault();
+      // };
     return (
         <div>
              <Box onSubmit={onSubmitForm}
@@ -45,12 +50,15 @@ function SignUpForm() {
         noValidate
         autoComplete="on"
       >
-        <TextField required name={"name"}  label="Nome" variant="outlined" /> <br />
-        <TextField required name={"email"}  label="E-mail" variant="outlined" /> <br />
-        <TextField required type="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" name={"cpf"}  label="cpf" variant="outlined" /> <br />
+        <TextField required name={"name"} value={form.name} label="Nome" variant="outlined" onChange={onChange} /> <br />
+        <TextField required name={"email"} value={form.email}  label="E-mail" variant="outlined" onChange={onChange}/> <br />
+        <TextField required type="cpf" pattern={"[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}|[0-9]{2}.?[0-9]{3}.?[0-9]{3}/?[0-9]{4}-?[0-9]{2}"} name={"cpf"} value={form.cpf} label="CPF" variant="outlined" onChange={onChange}/> <br />
         
+
+        <TextField required type={"password"} name={"password"} value={form.password} label="Senha" variant="outlined" onChange={onChange}/> <br />
+        <TextField required type={"password"} name={"confirm"}  label="Confirmar" variant="outlined" /> 
         
-        <FormControl sx={{ m: 0.7, width: '328px' }} variant="outlined">
+        {/* <FormControl sx={{ m: 0.7, width: '328px' }} variant="outlined">
           <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -71,7 +79,7 @@ function SignUpForm() {
             }
             label="Senha"
           />
-        </FormControl>
+        </FormControl> <br />
           
         
          
@@ -97,7 +105,7 @@ function SignUpForm() {
             }
             label="Password"
           />
-        </FormControl>
+        </FormControl> */}
         
         
         <SignUpButton type="submit">Criar</SignUpButton>

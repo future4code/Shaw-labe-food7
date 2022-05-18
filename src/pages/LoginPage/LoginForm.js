@@ -1,37 +1,42 @@
-import { Box, InputAdornment, OutlinedInput, TextField } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import React from 'react';
+import React, { useState } from 'react';
+import { Box, FormControl, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
+// import IconButton from '@mui/material/IconButton';
+// import Visibility from '@mui/icons-material/Visibility';
+// import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useNavigate } from 'react-router-dom';
 import { LoginButton } from './styled';
+import { login } from '../../services/users';
+import { useForm } from '../../hooks/useForm'
 
 function LoginForm() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+    const {form, onChange, clean} = useForm({email: "" , password: ""})
+    console.log(form)
     const onSubmitForm = (e) => {
         e.preventDefault();
-        // login(form, clear, navigate);
+        login(form, clean, navigate);
       }
 
-      const [values, setValues] = React.useState({
+      // const [values, setValues] = useState({
         
-        password: '',
-        showPassword: false,
-      });
+      //   password: '',
+      //   showPassword: false,
+      // });
     
-      const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-      };
+      // const handleChange = (prop) => (event) => {
+      //   setValues({ ...values, [prop]: event.target.value });
+      // };
     
-      const handleClickShowPassword = () => {
-        setValues({
-          ...values,
-          showPassword: !values.showPassword,
-        });
-      };
+      // const handleClickShowPassword = () => {
+      //   setValues({
+      //     ...values,
+      //     showPassword: !values.showPassword,
+      //   });
+      // };
     
-      const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-      };
+      // const handleMouseDownPassword = (event) => {
+      //   event.preventDefault();
+      // };
     return (
         <div>
              <Box onSubmit={onSubmitForm}
@@ -43,12 +48,16 @@ function LoginForm() {
         autoComplete="on"
       >
         
-        <TextField required name={"email"}  label="E-mail" variant="outlined" /> <br />
-        <OutlinedInput
+        <TextField required name={"email"} value={form.email} label="E-mail" variant="outlined" onChange={onChange} /> <br />
+        <TextField required type={"password"} name={"password"} value={form.password} label="Senha" variant="outlined" onChange={onChange} /> 
+
+        {/* <FormControl sx={{ m: 0.7, width: '328px' }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <OutlinedInput
             id="outlined-adornment-password"
             type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
+            value={form.password}
+            onChange={onChange}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -63,6 +72,7 @@ function LoginForm() {
             }
             label="Password"
           />
+        </FormControl> */}
         
         
         <LoginButton type="submit">Entrar</LoginButton>
