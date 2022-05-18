@@ -1,6 +1,19 @@
-import React from 'react'
-import {MainContainer, H1, Usuario, Paragrafo, Endereco, Historico, CardDiv, TituloCard, DataCard, SubTotal, ParagradoHistorico, ParagrafoEndereco} from './styled'
-import Editar from '../../assets/editar.png'
+import React from "react";
+import {
+  MainContainer,
+  H1,
+  Usuario,
+  Paragrafo,
+  Endereco,
+  Historico,
+  CardDiv,
+  TituloCard,
+  DataCard,
+  SubTotal,
+  ParagradoHistorico,
+  ParagrafoEndereco,
+} from "./styled";
+import Editar from "../../assets/editar.png";
 
 export const Perfil = () => {
   return (
@@ -47,4 +60,4 @@ export const Perfil = () => {
       </Historico>
     </MainContainer>
   );
-}
+};
