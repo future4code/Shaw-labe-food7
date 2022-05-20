@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Span = styled.span`
   font-size: 1rem;
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 1rem 0;
 `;
 
