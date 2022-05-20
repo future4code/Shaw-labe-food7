@@ -5,6 +5,10 @@ import { Login } from './pages/LoginPage/LoginPage';
 import { SingUpPage } from './pages/SingUpPage/SingUpPage';
 
 
+import { CadastroEndereco } from './pages/CadastroEndereco/CadastroEndereco';
+import { Feed } from './pages/Feed/Feed';
+
+
 function RoutesApp() {
     return (
         <BrowserRouter>
@@ -13,7 +17,11 @@ function RoutesApp() {
 
                 <Route path="/" element={<Login />} />
                 <Route path="/signup" element={<SingUpPage />} />
-                <Route path="signup-edit" element={<SignUpEdit />} />
+
+                  <Route path="signup-edit" element={<SignUpEdit />} />
+                <Route path="/cadastro-endereco" element={<CadastroEndereco />} />
+                <Route path="/feed" element={<Feed />} />
+
 
             </Routes>
         </BrowserRouter>
