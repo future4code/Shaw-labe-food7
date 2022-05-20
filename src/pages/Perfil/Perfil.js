@@ -14,6 +14,7 @@ import {
   ParagrafoEndereco,
 } from "./styled";
 import Editar from "../../assets/editar.png";
+import { Footer } from "../../components/Footer/Footer";
 
 export const Perfil = () => {
   return (
@@ -58,6 +59,7 @@ export const Perfil = () => {
           <SubTotal>SUBTOTAL R$ 67,00</SubTotal>
         </CardDiv>
       </Historico>
+      <Footer />
     </MainContainer>
   );
 };
