@@ -1,14 +1,12 @@
 import React from 'react';
-import { Perfil } from './pages/Perfil/Perfil';
-import RoutesApp from './route';
+import {Router} from './routes/Router';
 
 
 
 function App() {
   return (
     <div>
-      {/* <RoutesApp /> */}
-      <Perfil />
+      <Router />
     </div>
   );
 }

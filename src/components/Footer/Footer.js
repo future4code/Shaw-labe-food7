@@ -16,28 +16,28 @@ export const Footer = () => {
   const location = useLocation();
 
   return (
-    <MainContainer>
+    <div>
       {location.pathname === '/' ?
-        <div>
+        <MainContainer>
           <Imagem onClick={() => goToHome(navigate)} src={homeColor} alt="home" />
           <Imagem onClick={() => goToCart(navigate)} src={shopping} alt="carrinho" />
           <Imagem onClick={() => goToProfile(navigate)} src={perfil} alt="perfil" />
-        </div> : '' } 
+        </MainContainer> : '' } 
 
       {location.pathname === '/cart' ?
-        <div>
+        <MainContainer>
           <Imagem onClick={() => goToHome(navigate)} src={home} alt="home" />
           <Imagem onClick={() => goToCart(navigate)} src={shoppingColor} alt="carrinho" />
           <Imagem onClick={() => goToProfile(navigate)} src={perfil} alt="perfil" />
-        </div> : '' } 
+        </MainContainer> : '' } 
       
 
       {location.pathname === '/profile' ?
-        <div>
+        <MainContainer>
           <Imagem onClick={() => goToHome(navigate)} src={home} alt="home" />
           <Imagem onClick={() => goToCart(navigate)} src={shopping} alt="carrinho" />
           <Imagem onClick={() => goToProfile(navigate)} src={perfilColor} alt="perfil" />
-        </div> : '' } 
-    </MainContainer>
+        </MainContainer> : '' } 
+    </div>
   )
 }
