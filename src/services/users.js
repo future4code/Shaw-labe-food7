@@ -1,6 +1,6 @@
 import axios from "axios"
 import { BASE_URL } from "../constants/url"
-import { goToEditSignUp, goToSignUp } from "../routC"
+import { goToEditSignUp, goToSignUp } from "../routes/Cordinator"
 
 export  const login = async (body, clean, navigate) => {
     await axios.post(`${BASE_URL}/login`, body)

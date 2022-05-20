@@ -1,11 +1,11 @@
 import React from 'react'
 import back from '../../assets/img/back.png'
 import { useNavigate } from 'react-router-dom'
-import { goToLogin } from '../../routC'
+import { goToLogin } from '../../routes/Cordinator'
 import { ButtonBack, FormContainer, Hr, IMGBT, LogoContainer, Span } from './styled'
-import SignUpEditForm from './SignUpEditForm'
+import {SignUpEditForm} from './SignUpEditForm'
 
-export const SignUpEdit = () => {
+export const CadastroEndereco = () => {
   const navigate = useNavigate()
   return (
     <div>

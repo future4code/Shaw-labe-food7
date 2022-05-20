@@ -3,7 +3,7 @@ import { Box, TextField } from '@mui/material';
 
 import { SignUpButton } from './styled';
 
-function SignUpEditForm() {
+export const SignUpEditForm = () => {
         
              // const navigate = useNavigate();
     const onSubmitForm = (e) => {
@@ -43,5 +43,3 @@ function SignUpEditForm() {
         </div>
     );
 }
-
-export default SignUpEditForm;
