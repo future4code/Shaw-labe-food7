@@ -21,3 +21,7 @@ export const goToSignUp = (navigate) => {
 export const goToEditSignUp = (navigate) => {
   navigate('/signup-edit')
 }
+
+export const goToAddress = (navigate) => {
+  navigate('/address')
+}
