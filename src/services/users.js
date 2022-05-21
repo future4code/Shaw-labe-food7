@@ -1,6 +1,6 @@
 import axios from "axios"
 import { BASE_URL } from "../constants/url"
-import { goToEditSignUp, goToSignUp } from "../routC"
+import { goToAddress, goToSignUp } from "../routes/Cordinator"
 
 export  const login = async (body, clean, navigate) => {
     await axios.post(`${BASE_URL}/login`, body)
@@ -21,7 +21,7 @@ export  const login = async (body, clean, navigate) => {
     .then((response) => {
       localStorage.setItem("token", response.data.token)
       clean()
-      console.log("Deu certo!!!!!!!")
+      goToAddress(navigate)
     })
      .catch((error) => {
        console.log(error.response)
